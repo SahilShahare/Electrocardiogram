@@ -27,4 +27,420 @@
    
 # Arrhythmia Beat Classification
 
-  * [Ye C, Coimbra MT, Vijaya Kumar BK. Arrhythmia detection and classification using morphological and dynamic features of ECG signals. Annu Int Conf IEEE Eng Med Biol Soc. 2010;2010:1918-21. doi: 10.1109/IEMBS.2010.5627645. PMID: 21097000.](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5627645)
+  ## SOTA : 
+  [Ye C, Coimbra MT, Vijaya Kumar BK. Arrhythmia detection and classification using morphological and dynamic features of ECG signals. Annu Int Conf IEEE Eng Med Biol Soc. 2010;2010:1918-21. doi: 10.1109/IEMBS.2010.5627645. PMID: 21097000.](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5627645)
+  
+  ## Implementation :
+  Find the implementation of above for MIT-BIH Arrhythmia Database and St. Petersberg INCART Database [here](https://github.com/SahilShahare/Beat-Classification-MIT-BIH) and [here]() respectively.
+  
+
+
+  ### MIT-BIH Arrhythmia Database
+
+  ### Classes:
+
+  | Name                                  | Annotation |
+  |--------------------------------------:|-----------:|
+  | Normal Beat                           | N          |
+  | Left Bundle Branch Block Beat         | L          |
+  | Right Bundle Branch Block Beat        | R          |
+  | Atrial Premature Beat                 | A          |
+  | Premature Ventricular Contraction     | V          |
+  | Paced Beat                            | /          |
+  | Aberrated Atrial Premature Beat       | a          |
+  | Ventricular Flutter Wave              | !          |
+  | Fusion of Ventricular and Normal Beat | F          |
+  | Non-conducted P-wave (blocked APB)    | x          |
+  | Nodal (junction) Escape Beat          | j          |
+  | Fusion of Paced and Normal Beat       | f          |
+  | Ventricular Escape Beat               | E          |
+  | Nodal (junctional) Premature Beat     | J          |
+  | Atrial Escape Beat                    | e          |
+
+  ### Results
+  #### Lead 1
+  * Accuracy (Train): 0.9971
+  * Accuracy (Test): 0.9847
+  * Specificity and Sensitivity:
+<div style="display: flex; justify-content: space-between; text-align: center;">
+  <div style="margin-right: 10px;">
+    <h4>Train</h4>
+    <table border="1" style="border-collapse: collapse;">
+      <tr>
+        <th>Label</th>
+    <th>Sensitivity</th>
+    <th>Specificity</th>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>1.0</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>/</td>
+        <td>0.9996</td>
+        <td>0.9998 </td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>0.9823</td>
+        <td> 0.9996 </td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>1.0</td>
+        <td> 1.0 </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>0.9726</td>
+        <td> 1.0 </td>
+      </tr>
+      <tr>
+        <td>J</td>
+        <td>0.9756</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>0.9994</td>
+        <td>0.9999 </td>
+      </tr>
+      <tr>
+        <td>N</td>
+        <td>0.9988</td>
+        <td>0.9968</td>
+      </tr>
+      <tr>
+        <td>R</td>
+        <td>0.9997</td>
+        <td> 1.0 </td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td>0.9961</td>
+        <td> 1.0</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>0.9733</td>
+        <td> 1.0</td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>1.0</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>0.9857</td>
+        <td>0.9998 </td>
+      </tr>
+      <tr>
+        <td>j</td>
+        <td>0.9649</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>1.0</td>
+        <td>1.0 </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-left: 10px;">
+    <h4>Test</h4>
+    <table border="1" style="border-collapse: collapse;">
+      <tr>
+        <th>Label</th>
+    <th>Sensitivity</th>
+    <th>Specificity</th>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>0.9524</td>
+        <td>0.9998 </td>
+      </tr>
+      <tr>
+        <td>/</td>
+        <td>0.9981</td>
+        <td>0.9996</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>0.9286</td>
+        <td>0.9965</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>1.0</td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>0.8055</td>
+        <td>0.9979</td>
+      </tr>
+      <tr>
+        <td>J</td>
+        <td>0.6667</td>
+        <td>0.9996</td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>0.9934</td>
+        <td>0.9992</td>
+      </tr>
+      <tr>
+        <td>N</td>
+        <td>0.9875</td>
+        <td>0.9872</td>
+      </tr>
+      <tr>
+        <td>R</td>
+        <td>0.9949</td>
+        <td>0.9997</td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td>0.9687</td>
+        <td>0.9964 </td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>0.6267</td>
+        <td>0.9997</td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>0.375</td>
+        <td>0.9999 </td>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>0.943</td>
+        <td>0.9996</td>
+      </tr>
+      <tr>
+        <td>j</td>
+        <td>0.8261</td>
+        <td>0.9995</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>0.8763</td>
+        <td>0.9999</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+* Confusion Matrix
+<div style="display: flex; justify-content: space-around; align-items: center; text-align: center;">
+
+  <div style="margin-right: 10px;">
+    <h3>Train</h3>
+    <img src="Resources/CM_MIT_Lead1_Train.png" alt="Image 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="margin-left: 10px;">
+    <h3>Test</h3>
+    <img src="Resources/CM_MIT_Lead1_Test.png" alt="Image 2" style="width: 600px; height: auto;">
+  </div>
+    </div>
+
+#### Lead 2
+  * Accuracy (Train): 0.9937
+  * Accuracy (Test): 0.9775
+  * Specificity and Sensitivity:
+<div style="display: flex; justify-content: space-between; text-align: center;">
+  <div style="margin-right: 10px;">
+    <h4>Train</h4>
+    <table border="1" style="border-collapse: collapse;">
+      <tr>
+        <th>Label</th>
+    <th>Sensitivity</th>
+    <th>Specificity</th>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>1.0</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>/</td>
+        <td>0.9996</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>0.9666</td>
+        <td> 0.9992 </td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>1.0</td>
+        <td> 1.0 </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>0.9526</td>
+        <td> 1.0 </td>
+      </tr>
+      <tr>
+        <td>J</td>
+        <td>0.9512</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>0.9994</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>N</td>
+        <td>0.9963</td>
+        <td>0.9939</td>
+      </tr>
+      <tr>
+        <td>R</td>
+        <td>1.0</td>
+        <td> 0.9999 </td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td>0.9835</td>
+        <td> 0.9991</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>0.9333</td>
+        <td> 1.0</td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>0.875</td>
+        <td>1.0 </td>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>0.998</td>
+        <td>0.9994 </td>
+      </tr>
+      <tr>
+        <td>j</td>
+        <td>0.9561</td>
+        <td>0.9996 </td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>1.0</td>
+        <td>1.0 </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-left: 10px;">
+    <h4>Test</h4>
+    <table border="1" style="border-collapse: collapse;">
+      <tr>
+        <th>Label</th>
+    <th>Sensitivity</th>
+    <th>Specificity</th>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>0.9683</td>
+        <td>0.9997 </td>
+      </tr>
+      <tr>
+        <td>/</td>
+        <td>0.9988</td>
+        <td>0.9988</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>0.9136</td>
+        <td>0.9964</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>1.0</td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>0.803</td>
+        <td>0.9985</td>
+      </tr>
+      <tr>
+        <td>J</td>
+        <td>0.7143</td>
+        <td>0.9998</td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>0.9942</td>
+        <td>0.9986</td>
+      </tr>
+      <tr>
+        <td>N</td>
+        <td>0.9804</td>
+        <td>0.9822</td>
+      </tr>
+      <tr>
+        <td>R</td>
+        <td>0.9945</td>
+        <td>0.9999</td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td>0.9322</td>
+        <td>0.9917 </td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>0.6933</td>
+        <td>0.9998</td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>0.25</td>
+        <td>0.9999 </td>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>0.9695</td>
+        <td>0.9981</td>
+      </tr>
+      <tr>
+        <td>j</td>
+        <td>0.8</td>
+        <td>0.9991</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>0.8969</td>
+        <td>0.9999</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+* Confusion Matrix
+<div style="display: flex; justify-content: space-around; align-items: center; text-align: center;">
+
+  <div style="margin-right: 10px;">
+    <h3>Train</h3>
+    <img src="Resources/CM_MIT_Lead2_Train.png" alt="Image 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="margin-left: 10px;">
+    <h3>Test</h3>
+    <img src="Resources/CM_MIT_Lead2_Test.png" alt="Image 2" style="width: 600px; height: auto;">
+  </div>
+
+</div>
