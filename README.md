@@ -1,4 +1,4 @@
-# Electrocardiogram
+# Arrhythmia Detection using Electrocardiogram
 
 ## DataSets
 
